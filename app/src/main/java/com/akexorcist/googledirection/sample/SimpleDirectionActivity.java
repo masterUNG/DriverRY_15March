@@ -25,7 +25,9 @@ public class SimpleDirectionActivity extends AppCompatActivity implements OnMapR
         View.OnClickListener, DirectionCallback {
     private Button btnRequestDirection;
     private GoogleMap googleMap;
-    private String serverKey = "AIzaSyD_6HZwKgnxSOSkMWocLs4-2AViQuPBteQ";
+     //   private String serverKey = "AIzaSyD_6HZwKgnxSOSkMWocLs4-2AViQuPBteQ";
+    //private String serverKey = "AIzaSyD5QRX-lkXbS7Bapw61_N9qzQOWWQdcM7Q";
+    private String serverKey = "AIzaSyDE4-7-stlHCxH4BB539QF9OM4VU1u6HSs";
     private LatLng camera = new LatLng(37.782437, -122.4281893);
     private LatLng origin = new LatLng(37.7849569, -122.4068855);
     private LatLng destination = new LatLng(37.7814432, -122.4460177);
