@@ -165,8 +165,8 @@ public class MonitorActivity extends FragmentActivity implements OnMapReadyCallb
         try {
 
             loginStrings = getIntent().getStringArrayExtra("Login");
-            double lat = getIntent().getDoubleExtra("Lat", 13.694956);
-            double lng = getIntent().getDoubleExtra("Lng", 100.647696);
+            double lat = getIntent().getDoubleExtra("Lat", 13.694190);
+            double lng = getIntent().getDoubleExtra("Lng", 100.648192);
             destinationLatLng = new LatLng(lat, lng);
 
         } catch (Exception e) {
