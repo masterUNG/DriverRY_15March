@@ -1,0 +1,26 @@
+[
+    {
+        "merged": "/Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_13feb/app/build/intermediates/res/merged/debug/anim-v21/design_appbar_state_list_animator.xml",
+        "source": "/Users/masterUNG/.android/build-cache/5c08961d7d87816e2f9d91ba59db54d0a48e169a/output/res/anim-v21/design_appbar_state_list_animator.xml"
+    },
+    {
+        "merged": "/Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_13feb/app/build/intermediates/res/merged/debug/anim-v21/design_bottom_sheet_slide_in.xml",
+        "source": "/Users/masterUNG/.android/build-cache/5c08961d7d87816e2f9d91ba59db54d0a48e169a/output/res/anim-v21/design_bottom_sheet_slide_in.xml"
+    },
+    {
+        "merged": "/Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_13feb/app/build/intermediates/res/merged/debug/anim-v21/design_bottom_sheet_slide_out.xml",
+        "source": "/Users/masterUNG/.android/build-cache/5c08961d7d87816e2f9d91ba59db54d0a48e169a/output/res/anim-v21/design_bottom_sheet_slide_out.xml"
+    },
+    {
+        "merged": "/Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_15March/app/build/intermediates/res/merged/debug/anim-v21/design_appbar_state_list_animator.xml",
+        "source": "/Users/masterUNG/.android/build-cache/6c3a5d344a805fb5fd43b6c70790f4e004a44a30/output/res/anim-v21/design_appbar_state_list_animator.xml"
+    },
+    {
+        "merged": "/Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_15March/app/build/intermediates/res/merged/debug/anim-v21/design_bottom_sheet_slide_in.xml",
+        "source": "/Users/masterUNG/.android/build-cache/6c3a5d344a805fb5fd43b6c70790f4e004a44a30/output/res/anim-v21/design_bottom_sheet_slide_in.xml"
+    },
+    {
+        "merged": "/Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_15March/app/build/intermediates/res/merged/debug/anim-v21/design_bottom_sheet_slide_out.xml",
+        "source": "/Users/masterUNG/.android/build-cache/6c3a5d344a805fb5fd43b6c70790f4e004a44a30/output/res/anim-v21/design_bottom_sheet_slide_out.xml"
+    }
+]

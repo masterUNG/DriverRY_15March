@@ -1,0 +1,26 @@
+[
+    {
+        "outputFile": "/Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_15March/googleDirectionLibrary/build/intermediates/incremental/mergeReleaseResources/merged.dir/values-zh-rHK/values-zh-rHK.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 105,
+                    "endColumn": 166,
+                    "endOffset": 267
+                },
+                "from": {
+                    "file": "/Users/masterUNG/.android/build-cache/507b917e2252482878e9387cee3e017895d5408a/output/res/values-zh-rHK/values.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 0,
+                        "startOffset": 289,
+                        "endColumn": 166,
+                        "endOffset": 455
+                    }
+                }
+            }
+        ]
+    }
+]

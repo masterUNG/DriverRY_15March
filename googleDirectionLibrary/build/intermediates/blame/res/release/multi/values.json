@@ -1,0 +1,45 @@
+[
+    {
+        "outputFile": "/Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_15March/googleDirectionLibrary/build/intermediates/incremental/mergeReleaseResources/merged.dir/values/values.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 14,
+                    "startColumn": 4,
+                    "startOffset": 1414,
+                    "endColumn": 67,
+                    "endOffset": 1477
+                },
+                "from": {
+                    "file": "/Users/masterUNG/.android/build-cache/507b917e2252482878e9387cee3e017895d5408a/output/res/values/values.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 0,
+                        "startOffset": 276,
+                        "endColumn": 63,
+                        "endOffset": 339
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 15,
+                    "startColumn": 4,
+                    "startOffset": 1482,
+                    "endColumn": 166,
+                    "endOffset": 1644
+                },
+                "from": {
+                    "file": "/Users/masterUNG/.android/build-cache/507b917e2252482878e9387cee3e017895d5408a/output/res/values/values.xml",
+                    "position": {
+                        "startLine": 7,
+                        "startColumn": 0,
+                        "startOffset": 439,
+                        "endColumn": 166,
+                        "endOffset": 605
+                    }
+                }
+            }
+        ]
+    }
+]

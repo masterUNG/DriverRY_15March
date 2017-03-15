@@ -1,0 +1,206 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_15March/app/src/main/AndroidManifest.xml:1:39-50:12
+	package
+		ADDED from /Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_15March/app/src/main/AndroidManifest.xml:2:1-48
+		INJECTED from /Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_15March/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_15March/app/src/main/AndroidManifest.xml
+	android:versionName
+		INJECTED from /Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_15March/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_15March/app/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_15March/app/src/main/AndroidManifest.xml:1:49-107
+	android:versionCode
+		INJECTED from /Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_15March/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_15March/app/src/main/AndroidManifest.xml
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from /Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_15March/app/src/main/AndroidManifest.xml:5:1-75
+MERGED from [com.google.android.gms:play-services-maps:10.0.1] /Users/masterUNG/.android/build-cache/d54221ca316ec4a370791d6694fed223bbcdc340/output/AndroidManifest.xml:19:5-78
+	android:name
+		ADDED from /Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_15March/app/src/main/AndroidManifest.xml:5:18-72
+uses-permission#android.permission.ACCESS_WIFI_STATE
+ADDED from /Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_15March/app/src/main/AndroidManifest.xml:6:1-72
+	android:name
+		ADDED from /Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_15March/app/src/main/AndroidManifest.xml:6:18-69
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from /Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_15March/app/src/main/AndroidManifest.xml:7:1-77
+	android:name
+		ADDED from /Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_15March/app/src/main/AndroidManifest.xml:7:18-74
+uses-permission#android.permission.CALL_PHONE
+ADDED from /Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_15March/app/src/main/AndroidManifest.xml:8:1-65
+	android:name
+		ADDED from /Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_15March/app/src/main/AndroidManifest.xml:8:18-62
+uses-permission#android.permission.INTERNET
+ADDED from /Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_15March/app/src/main/AndroidManifest.xml:9:1-63
+MERGED from [com.akexorcist:googleDirectionLibrary:1.0.5] /Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_15March/googleDirectionLibrary/build/intermediates/bundles/default/AndroidManifest.xml:11:5-67
+MERGED from [com.google.android.gms:play-services-maps:10.0.1] /Users/masterUNG/.android/build-cache/d54221ca316ec4a370791d6694fed223bbcdc340/output/AndroidManifest.xml:20:5-66
+	android:name
+		ADDED from /Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_15March/app/src/main/AndroidManifest.xml:9:18-60
+uses-permission#android.permission.SEND_SMS
+ADDED from /Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_15March/app/src/main/AndroidManifest.xml:10:1-63
+	android:name
+		ADDED from /Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_15March/app/src/main/AndroidManifest.xml:10:18-60
+uses-permission#android.permission.ACCESS_FINE_LOCATION
+ADDED from /Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_15March/app/src/main/AndroidManifest.xml:11:1-75
+	android:name
+		ADDED from /Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_15March/app/src/main/AndroidManifest.xml:11:18-72
+uses-permission#android.permission.ACCESS_COARSE_LOCATION
+ADDED from /Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_15March/app/src/main/AndroidManifest.xml:12:1-77
+	android:name
+		ADDED from /Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_15March/app/src/main/AndroidManifest.xml:12:18-74
+uses-permission#com.google.android.providers.gsf.permission.READ_GSERVICE
+ADDED from /Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_15March/app/src/main/AndroidManifest.xml:13:1-93
+	android:name
+		ADDED from /Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_15March/app/src/main/AndroidManifest.xml:13:18-90
+uses-permission#android.permission.READ_EXTERNAL_STORAGE
+ADDED from /Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_15March/app/src/main/AndroidManifest.xml:14:1-76
+	android:name
+		ADDED from /Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_15March/app/src/main/AndroidManifest.xml:14:18-73
+uses-feature#0x00020000
+ADDED from /Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_15March/app/src/main/AndroidManifest.xml:16:1-74
+MERGED from [com.google.android.gms:play-services-maps:10.0.1] /Users/masterUNG/.android/build-cache/d54221ca316ec4a370791d6694fed223bbcdc340/output/AndroidManifest.xml:21:5-77
+	android:glEsVersion
+		ADDED from /Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_15March/app/src/main/AndroidManifest.xml:16:15-47
+	android:required
+		ADDED from /Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_15March/app/src/main/AndroidManifest.xml:16:48-71
+application
+ADDED from /Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_15March/app/src/main/AndroidManifest.xml:18:1-48:15
+MERGED from [com.android.support:design:25.0.1] /Users/masterUNG/.android/build-cache/6c3a5d344a805fb5fd43b6c70790f4e004a44a30/output/AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:appcompat-v7:25.0.1] /Users/masterUNG/.android/build-cache/bf668d511e04c840378de0cf9d3419a738a60c71/output/AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:animated-vector-drawable:25.0.1] /Users/masterUNG/.android/build-cache/8a73df328a833a83f511e2ebec4d379d3f97490f/output/AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:support-vector-drawable:25.0.1] /Users/masterUNG/.android/build-cache/8c6d27e23f84b768d79e5784ef9635f17ccd89cf/output/AndroidManifest.xml:23:5-20
+MERGED from [com.android.support:transition:25.0.1] /Users/masterUNG/.android/build-cache/ff16c33776c0ab22eb74c72f60d214d315642cfb/output/AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.gms:play-services-maps:10.0.1] /Users/masterUNG/.android/build-cache/d54221ca316ec4a370791d6694fed223bbcdc340/output/AndroidManifest.xml:24:5-19
+MERGED from [com.google.android.gms:play-services-base:10.0.1] /Users/masterUNG/.android/build-cache/255829816c642a8405d9bded49fe28171881b2f3/output/AndroidManifest.xml:18:5-20:19
+MERGED from [com.google.android.gms:play-services-tasks:10.0.1] /Users/masterUNG/.android/build-cache/9dc648d372ba460b42ee5e5d1235f42410af5bc0/output/AndroidManifest.xml:4:5-19
+MERGED from [com.google.android.gms:play-services-basement:10.0.1] /Users/masterUNG/.android/build-cache/507b917e2252482878e9387cee3e017895d5408a/output/AndroidManifest.xml:19:5-21:19
+MERGED from [com.android.support:support-v4:25.0.1] /Users/masterUNG/.android/build-cache/b731b6ab90357d1c2b27556e602a62d7cd74b208/output/AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-fragment:25.0.1] /Users/masterUNG/.android/build-cache/69640d0ee472482af9271e7ce84f9a92fdb50f91/output/AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-media-compat:25.0.1] /Users/masterUNG/.android/build-cache/bc908c17c4a22789ddf5f4e7897bc134e6a26891/output/AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-core-ui:25.0.1] /Users/masterUNG/.android/build-cache/fd96fe68807f1931ec071e0cbcb5cacbe5dfe42d/output/AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-core-utils:25.0.1] /Users/masterUNG/.android/build-cache/22a06a7ef96184a6b5da16b49981382a8a48e1a4/output/AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-compat:25.0.1] /Users/masterUNG/.android/build-cache/553461cb3da9adec7c54efe9e57338fa9d5b4b6d/output/AndroidManifest.xml:25:5-20
+	android:label
+		ADDED from /Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_15March/app/src/main/AndroidManifest.xml:18:82-114
+	android:supportsRtl
+		ADDED from /Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_15March/app/src/main/AndroidManifest.xml:19:5-31
+	android:allowBackup
+		ADDED from /Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_15March/app/src/main/AndroidManifest.xml:18:14-40
+	android:icon
+		ADDED from /Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_15March/app/src/main/AndroidManifest.xml:18:41-81
+	android:theme
+		ADDED from /Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_15March/app/src/main/AndroidManifest.xml:19:32-63
+activity#com.akexorcist.googledirection.sample.MonitorActivity
+ADDED from /Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_15March/app/src/main/AndroidManifest.xml:20:5-26:16
+	android:screenOrientation
+		ADDED from /Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_15March/app/src/main/AndroidManifest.xml:20:47-83
+	android:name
+		ADDED from /Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_15March/app/src/main/AndroidManifest.xml:20:15-46
+intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
+ADDED from /Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_15March/app/src/main/AndroidManifest.xml:21:9-25:25
+action#android.intent.action.MAIN
+ADDED from /Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_15March/app/src/main/AndroidManifest.xml:22:13-65
+	android:name
+		ADDED from /Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_15March/app/src/main/AndroidManifest.xml:22:21-62
+category#android.intent.category.LAUNCHER
+ADDED from /Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_15March/app/src/main/AndroidManifest.xml:24:13-73
+	android:name
+		ADDED from /Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_15March/app/src/main/AndroidManifest.xml:24:23-70
+activity#com.akexorcist.googledirection.sample.SimpleDirectionActivity
+ADDED from /Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_15March/app/src/main/AndroidManifest.xml:28:5-29:48
+	android:screenOrientation
+		ADDED from /Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_15March/app/src/main/AndroidManifest.xml:29:9-45
+	android:label
+		ADDED from /Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_15March/app/src/main/AndroidManifest.xml:28:55-95
+	android:name
+		ADDED from /Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_15March/app/src/main/AndroidManifest.xml:28:15-54
+activity#com.akexorcist.googledirection.sample.TransitDirectionActivity
+ADDED from /Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_15March/app/src/main/AndroidManifest.xml:31:5-32:48
+	android:screenOrientation
+		ADDED from /Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_15March/app/src/main/AndroidManifest.xml:32:9-45
+	android:label
+		ADDED from /Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_15March/app/src/main/AndroidManifest.xml:31:56-97
+	android:name
+		ADDED from /Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_15March/app/src/main/AndroidManifest.xml:31:15-55
+activity#com.akexorcist.googledirection.sample.AlternativeDirectionActivity
+ADDED from /Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_15March/app/src/main/AndroidManifest.xml:34:5-35:48
+	android:screenOrientation
+		ADDED from /Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_15March/app/src/main/AndroidManifest.xml:35:9-45
+	android:label
+		ADDED from /Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_15March/app/src/main/AndroidManifest.xml:34:60-105
+	android:name
+		ADDED from /Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_15March/app/src/main/AndroidManifest.xml:34:15-59
+meta-data#com.google.android.gms.version
+ADDED from /Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_15March/app/src/main/AndroidManifest.xml:37:5-118
+MERGED from [com.google.android.gms:play-services-basement:10.0.1] /Users/masterUNG/.android/build-cache/507b917e2252482878e9387cee3e017895d5408a/output/AndroidManifest.xml:20:9-121
+	android:value
+		ADDED from /Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_15March/app/src/main/AndroidManifest.xml:37:62-115
+	android:name
+		ADDED from /Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_15March/app/src/main/AndroidManifest.xml:37:16-61
+activity#com.akexorcist.googledirection.sample.ServiceActivity
+ADDED from /Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_15March/app/src/main/AndroidManifest.xml:39:5-40:48
+	android:screenOrientation
+		ADDED from /Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_15March/app/src/main/AndroidManifest.xml:40:9-45
+	android:label
+		ADDED from /Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_15March/app/src/main/AndroidManifest.xml:39:47-93
+	android:name
+		ADDED from /Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_15March/app/src/main/AndroidManifest.xml:39:15-46
+activity#com.akexorcist.googledirection.sample.PhotoActivity
+ADDED from /Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_15March/app/src/main/AndroidManifest.xml:41:5-84
+	android:screenOrientation
+		ADDED from /Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_15March/app/src/main/AndroidManifest.xml:41:45-81
+	android:name
+		ADDED from /Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_15March/app/src/main/AndroidManifest.xml:41:15-44
+activity#com.akexorcist.googledirection.sample.ConfirmJob
+ADDED from /Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_15March/app/src/main/AndroidManifest.xml:42:5-44
+	android:name
+		ADDED from /Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_15March/app/src/main/AndroidManifest.xml:42:15-41
+activity#com.akexorcist.googledirection.sample.NotificationAlert
+ADDED from /Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_15March/app/src/main/AndroidManifest.xml:43:5-60
+	android:name
+		ADDED from /Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_15March/app/src/main/AndroidManifest.xml:43:15-48
+activity#com.akexorcist.googledirection.sample.MainActivity
+ADDED from /Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_15March/app/src/main/AndroidManifest.xml:44:5-45
+	android:name
+		ADDED from /Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_15March/app/src/main/AndroidManifest.xml:44:15-43
+meta-data#com.google.android.geo.API_KEY
+ADDED from /Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_15March/app/src/main/AndroidManifest.xml:46:5-120
+	android:value
+		ADDED from /Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_15March/app/src/main/AndroidManifest.xml:46:62-117
+	android:name
+		ADDED from /Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_15March/app/src/main/AndroidManifest.xml:46:16-61
+uses-sdk
+INJECTED from /Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_15March/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+MERGED from [com.akexorcist:googleDirectionLibrary:1.0.5] /Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_15March/googleDirectionLibrary/build/intermediates/bundles/default/AndroidManifest.xml:7:5-9:41
+MERGED from [com.android.support:design:25.0.1] /Users/masterUNG/.android/build-cache/6c3a5d344a805fb5fd43b6c70790f4e004a44a30/output/AndroidManifest.xml:21:5-23:62
+MERGED from [com.android.support:appcompat-v7:25.0.1] /Users/masterUNG/.android/build-cache/bf668d511e04c840378de0cf9d3419a738a60c71/output/AndroidManifest.xml:21:5-23:78
+MERGED from [com.android.support:animated-vector-drawable:25.0.1] /Users/masterUNG/.android/build-cache/8a73df328a833a83f511e2ebec4d379d3f97490f/output/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:25.0.1] /Users/masterUNG/.android/build-cache/8c6d27e23f84b768d79e5784ef9635f17ccd89cf/output/AndroidManifest.xml:21:5-43
+MERGED from [com.android.support:recyclerview-v7:25.0.1] /Users/masterUNG/.android/build-cache/3cc7147b46c64d4a748ff536ffebeaeedda93f74/output/AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:transition:25.0.1] /Users/masterUNG/.android/build-cache/ff16c33776c0ab22eb74c72f60d214d315642cfb/output/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-maps:10.0.1] /Users/masterUNG/.android/build-cache/d54221ca316ec4a370791d6694fed223bbcdc340/output/AndroidManifest.xml:23:5-42
+MERGED from [com.google.android.gms:play-services-base:10.0.1] /Users/masterUNG/.android/build-cache/255829816c642a8405d9bded49fe28171881b2f3/output/AndroidManifest.xml:17:5-42
+MERGED from [com.google.android.gms:play-services-tasks:10.0.1] /Users/masterUNG/.android/build-cache/9dc648d372ba460b42ee5e5d1235f42410af5bc0/output/AndroidManifest.xml:3:5-42
+MERGED from [com.google.android.gms:play-services-basement:10.0.1] /Users/masterUNG/.android/build-cache/507b917e2252482878e9387cee3e017895d5408a/output/AndroidManifest.xml:17:5-42
+MERGED from [com.android.support:support-v4:25.0.1] /Users/masterUNG/.android/build-cache/b731b6ab90357d1c2b27556e602a62d7cd74b208/output/AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:support-fragment:25.0.1] /Users/masterUNG/.android/build-cache/69640d0ee472482af9271e7ce84f9a92fdb50f91/output/AndroidManifest.xml:21:5-23:60
+MERGED from [com.android.support:support-media-compat:25.0.1] /Users/masterUNG/.android/build-cache/bc908c17c4a22789ddf5f4e7897bc134e6a26891/output/AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:support-core-ui:25.0.1] /Users/masterUNG/.android/build-cache/fd96fe68807f1931ec071e0cbcb5cacbe5dfe42d/output/AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-core-utils:25.0.1] /Users/masterUNG/.android/build-cache/22a06a7ef96184a6b5da16b49981382a8a48e1a4/output/AndroidManifest.xml:21:5-23:61
+MERGED from [com.android.support:support-compat:25.0.1] /Users/masterUNG/.android/build-cache/553461cb3da9adec7c54efe9e57338fa9d5b4b6d/output/AndroidManifest.xml:21:5-23:58
+	tools:overrideLibrary
+		ADDED from [com.android.support:design:25.0.1] /Users/masterUNG/.android/build-cache/6c3a5d344a805fb5fd43b6c70790f4e004a44a30/output/AndroidManifest.xml:23:9-59
+	android:targetSdkVersion
+		INJECTED from /Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_15March/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_15March/app/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_15March/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_15March/app/src/main/AndroidManifest.xml
+activity#com.google.android.gms.common.api.GoogleApiActivity
+ADDED from [com.google.android.gms:play-services-base:10.0.1] /Users/masterUNG/.android/build-cache/255829816c642a8405d9bded49fe28171881b2f3/output/AndroidManifest.xml:19:9-172
+	android:exported
+		ADDED from [com.google.android.gms:play-services-base:10.0.1] /Users/masterUNG/.android/build-cache/255829816c642a8405d9bded49fe28171881b2f3/output/AndroidManifest.xml:19:146-170
+	android:theme
+		ADDED from [com.google.android.gms:play-services-base:10.0.1] /Users/masterUNG/.android/build-cache/255829816c642a8405d9bded49fe28171881b2f3/output/AndroidManifest.xml:19:86-145
+	android:name
+		ADDED from [com.google.android.gms:play-services-base:10.0.1] /Users/masterUNG/.android/build-cache/255829816c642a8405d9bded49fe28171881b2f3/output/AndroidManifest.xml:19:19-85

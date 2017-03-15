@@ -1,0 +1,26 @@
+[
+    {
+        "outputFile": "/Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_15March/googleDirectionLibrary/build/intermediates/incremental/mergeReleaseResources/merged.dir/values-ky/values-ky.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 105,
+                    "endColumn": 220,
+                    "endOffset": 321
+                },
+                "from": {
+                    "file": "/Users/masterUNG/.android/build-cache/507b917e2252482878e9387cee3e017895d5408a/output/res/values-ky/values.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 0,
+                        "startOffset": 285,
+                        "endColumn": 220,
+                        "endOffset": 505
+                    }
+                }
+            }
+        ]
+    }
+]

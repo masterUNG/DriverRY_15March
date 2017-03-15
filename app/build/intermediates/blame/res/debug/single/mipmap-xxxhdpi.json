@@ -1,0 +1,22 @@
+[
+    {
+        "merged": "/Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_15March/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi/mk_car.png",
+        "source": "/Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_15March/app/src/main/res/mipmap-xxxhdpi/mk_car.png"
+    },
+    {
+        "merged": "/Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_15March/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi/mk_driver.png",
+        "source": "/Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_15March/app/src/main/res/mipmap-xxxhdpi/mk_driver.png"
+    },
+    {
+        "merged": "/Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_15March/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi/mk_desination.png",
+        "source": "/Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_15March/app/src/main/res/mipmap-xxxhdpi/mk_desination.png"
+    },
+    {
+        "merged": "/Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_15March/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi/mk_origin.png",
+        "source": "/Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_15March/app/src/main/res/mipmap-xxxhdpi/mk_origin.png"
+    },
+    {
+        "merged": "/Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_15March/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi/mk_car2.png",
+        "source": "/Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_15March/app/src/main/res/mipmap-xxxhdpi/mk_car2.png"
+    }
+]
