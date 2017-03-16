@@ -41,6 +41,22 @@ public class MonitorActivity extends FragmentActivity implements OnMapReadyCallb
     private Marker destinationMarker, userMarker;
     private String serverKey = "AIzaSyDE4-7-stlHCxH4BB539QF9OM4VU1u6HSs";
     private boolean aBoolean = true;
+    private Marker marker;
+    private Handler handler = new Handler();
+    private Runnable runnable = new Runnable() {
+        @Override
+        public void run() {
+            try {
+
+                marker.remove();
+                createCarMarker();
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            handler.postDelayed(runnable, 1000);
+        }
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -88,7 +104,7 @@ public class MonitorActivity extends FragmentActivity implements OnMapReadyCallb
         Log.d("14MarchV1", "userLat ==> " + userLatADouble);
         Log.d("14MarchV1", "userLng ==> " + userLngADouble);
 
-        myLoop();
+        //myLoop();
 
 
     }   // refreshLocation
@@ -195,10 +211,20 @@ public class MonitorActivity extends FragmentActivity implements OnMapReadyCallb
         //Create Routing Map
         createRoutingMap();
 
-        myLoop();
+       // myLoop();
+
+        createCarMarker();
+
+        handler.postDelayed(runnable, 1000);
 
 
     }   // onMapReady
+
+    private void createCarMarker() {
+        marker = mMap.addMarker(new MarkerOptions()
+                .position(new LatLng(userLatADouble, userLngADouble))
+                .icon(BitmapDescriptorFactory.fromResource(R.mipmap.mk_car2)));
+    }
 
     private void myLoop() {
 
