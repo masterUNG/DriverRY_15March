@@ -88,10 +88,10 @@ public class MonitorActivity extends FragmentActivity implements OnMapReadyCallb
         Log.d("14MarchV1", "userLat ==> " + userLatADouble);
         Log.d("14MarchV1", "userLng ==> " + userLngADouble);
 
+        myLoop();
 
 
-
-    }
+    }   // refreshLocation
 
     @Override
     protected void onStop() {
@@ -164,9 +164,10 @@ public class MonitorActivity extends FragmentActivity implements OnMapReadyCallb
 
         try {
 
+            double[] doubles = new double[]{13.669993, 100.621239};
             loginStrings = getIntent().getStringArrayExtra("Login");
-            double lat = getIntent().getDoubleExtra("Lat", 13.694190);
-            double lng = getIntent().getDoubleExtra("Lng", 100.648192);
+            double lat = getIntent().getDoubleExtra("Lat", doubles[0]);
+            double lng = getIntent().getDoubleExtra("Lng", doubles[1]);
             destinationLatLng = new LatLng(lat, lng);
 
         } catch (Exception e) {
@@ -201,25 +202,32 @@ public class MonitorActivity extends FragmentActivity implements OnMapReadyCallb
 
     private void myLoop() {
 
-        //ToDo
-        final Marker marker = mMap.addMarker(new MarkerOptions()
-                .position(new LatLng(userLatADouble, userLngADouble))
-        .icon(BitmapDescriptorFactory.fromResource(R.mipmap.mk_car2)));
+        try {
+
+            //ToDo
+            // Create Marker for Car
+            final Marker marker = mMap.addMarker(new MarkerOptions()
+                    .position(new LatLng(userLatADouble, userLngADouble))
+                    .icon(BitmapDescriptorFactory.fromResource(R.mipmap.mk_car2)));
 
 
-        //Delay
-        Handler handler = new Handler();
-        handler.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                if (aBoolean) {
-                    marker.remove();
-                    myLoop();
+            //Delay
+            Handler handler = new Handler();
+            handler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    if (aBoolean) {
+                        marker.remove();
+                        myLoop();
+                    }
                 }
-            }
-        }, 1000);
+            }, 1000);
 
-    }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+    }   // myLoop
 
     private void createRoutingMap() {
 
