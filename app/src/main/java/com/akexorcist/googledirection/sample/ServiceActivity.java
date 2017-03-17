@@ -52,6 +52,8 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.regex.Pattern;
 
+import static android.R.attr.name;
+
 public class ServiceActivity extends FragmentActivity implements OnMapReadyCallback, DirectionCallback, View.OnClickListener {
 
     //Explicit
@@ -108,8 +110,31 @@ public class ServiceActivity extends FragmentActivity implements OnMapReadyCallb
         //Button Controller
         buttonController();
 
+        googleMapController();
+
 
     }   //Main Method
+
+    private void googleMapController() {
+
+        Button button = (Button) findViewById(R.id.btnGoogleMap);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+//                Intent intent = new Intent(android.content.Intent.ACTION_VIEW,
+//                        Uri.parse("http://maps.google.com/maps?saddr=20.344,34.34&daddr=20.5666,45.345"));
+//                startActivity(intent);
+
+                Intent intent = new Intent(android.content.Intent.ACTION_VIEW,
+                        Uri.parse("geo:0,0?q=13.668160, 100.634406 (" + name + ")"));
+                startActivity(intent);
+
+            }
+        });
+
+
+    }
 
     private void setupMapFragment() {
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
