@@ -69,6 +69,9 @@ public class ConfirmJob extends AppCompatActivity {
                 intent.putExtra("Login", loginString);
                 intent.putExtra("aBoolean2", true);
                 startActivity(intent);
+            } else if (intStatus == 4) {
+                goToMonitor();
+
             }
 
 
@@ -77,6 +80,38 @@ public class ConfirmJob extends AppCompatActivity {
         }
 
     }   // checkStatus
+
+    private void goToMonitor() {
+
+        try {
+
+            GetJobWhereIdDriverStatus getJobWhereIdDriverStatus = new GetJobWhereIdDriverStatus(ConfirmJob.this);
+            getJobWhereIdDriverStatus.execute(loginString[0], "4");
+            String strJSON = getJobWhereIdDriverStatus.get();
+
+            Log.d("17MarchV2", "JSON ==> " + strJSON);
+
+            JSONArray jsonArray = new JSONArray(strJSON);
+            JSONObject jsonObject = jsonArray.getJSONObject(0);
+
+            double douLat = Double.parseDouble(jsonObject.getString("Lat_end"));
+            double douLng = Double.parseDouble(jsonObject.getString("Lng_end"));
+
+            Log.d("17MarchV2", "Lat ==> " + douLat);
+            Log.d("17MarchV2", "Lng ==> " + douLng);
+
+            Intent intent = new Intent(ConfirmJob.this, MonitorActivity.class);
+            intent.putExtra("Login", loginString);
+            intent.putExtra("Lat", douLat);
+            intent.putExtra("Lng", douLng);
+            startActivity(intent);
+
+
+        } catch (Exception e) {
+            Log.d("17MarchV2", "e goTo ==> " + e.toString());
+        }
+
+    }   // goToMonitor
 
     @Override
     public void onBackPressed() {
