@@ -43,7 +43,7 @@ public class MonitorActivity extends FragmentActivity implements OnMapReadyCallb
     private boolean aBoolean = true;
     private Marker marker;
     private Handler handler = new Handler();
-    private int secAnInt = 3000;
+    private int secAnInt = 60000;    // ความถี่ ของการใช้ API
     private boolean aBoolean2 = true;
     private double somLengthADouble = 0.0;
 
@@ -194,7 +194,7 @@ public class MonitorActivity extends FragmentActivity implements OnMapReadyCallb
 
         try {
 
-            double[] doubles = new double[]{13.669993, 100.621239};
+            double[] doubles = new double[]{13.669993, 100.621239}; // ป้ายรถเมย์ หน้าหมู่บ้าน
             loginStrings = getIntent().getStringArrayExtra("Login");
             double lat = getIntent().getDoubleExtra("Lat", doubles[0]);
             double lng = getIntent().getDoubleExtra("Lng", doubles[1]);
