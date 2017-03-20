@@ -323,6 +323,7 @@ public class MonitorActivity extends FragmentActivity implements OnMapReadyCallb
 
                 aBoolean2 = false;
                 mMap.addPolyline(DirectionConverter.createPolyline(this, directionPositionList, 5, Color.GRAY));
+
                 //ระยะที่ สั้นสุดที่ Google แนะนำ
                 String strLengthIdea = direction.getRouteList().get(0).getLegList().get(0).getDistance().getText().toString();
                 Log.d("16MarchV1", "ระยะห่่าง ที่แนะนำ ==> " + strLengthIdea);
