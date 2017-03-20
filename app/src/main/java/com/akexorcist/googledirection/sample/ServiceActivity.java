@@ -526,16 +526,9 @@ public class ServiceActivity extends FragmentActivity implements OnMapReadyCallb
 
         } else {
 
-            Log.d("13MarchV1", "นี่คือ สภาวะ คลิกออกเดินทาง");
+            //นี่คือ สภาวะ หลังจากถ่ายรูปเสร็จ และ คลิกออกเดินทาง
 
-            //เริ่มเดินทาง หรือหยุดเวลา ที่จับ
-            Calendar calendar = Calendar.getInstance();
-            DateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
-            endCountTime = dateFormat.format(calendar.getTime());
-            Log.d("28decV2", "endcountTime หรือเวลาออกเดินทาง ==> " + endCountTime);
-
-
-            findWaitMinus();
+            myAlertStart();
 
 
         }   //if
@@ -543,6 +536,42 @@ public class ServiceActivity extends FragmentActivity implements OnMapReadyCallb
         Log.d("28decV2", "aBoolean ==> " + aBoolean);
 
     }   // onClick
+
+    private void myAlertStart() {
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(ServiceActivity.this);
+        builder.setCancelable(false);
+        builder.setIcon(R.mipmap.mk_car2);
+        builder.setTitle("จะออกเดินทางแล้วนะ");
+        builder.setMessage("มั่นใจนะ จะออกรถแล้วนะ");
+        builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                dialogInterface.dismiss();
+            }
+        });
+        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+
+                Log.d("13MarchV1", "นี่คือ สภาวะ คลิกออกเดินทาง");
+
+                //เริ่มเดินทาง หรือหยุดเวลา ที่จับ
+                Calendar calendar = Calendar.getInstance();
+                DateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
+                endCountTime = dateFormat.format(calendar.getTime());
+                Log.d("28decV2", "endcountTime หรือเวลาออกเดินทาง ==> " + endCountTime);
+
+
+                findWaitMinus();
+
+                dialogInterface.dismiss();
+
+            }
+        });
+
+
+    }
 
 
     // GetJob จะส่งค่า id ของคนขับ และ Status ที่มีค่าเท่ากับ 2 ไป
