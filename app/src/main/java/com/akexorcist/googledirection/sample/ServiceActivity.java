@@ -35,7 +35,9 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.gms.maps.model.Polyline;
 import com.google.android.gms.maps.model.PolylineOptions;
 import com.squareup.okhttp.FormEncodingBuilder;
 import com.squareup.okhttp.OkHttpClient;
@@ -83,6 +85,11 @@ public class ServiceActivity extends FragmentActivity implements OnMapReadyCallb
     private LatLng destination = new LatLng(13.678262, 100.623612);
     private String[] colors = {"#7f000077", "#7f31c7c5", "#7fff8a00"};
     private int colorAnInt = Color.BLUE;
+    private MarkerOptions userMarkerOptions;
+    private Marker userMarker;
+    private PolylineOptions[] polylineOptionses = new PolylineOptions[2];
+    private int indexPolyline = 0;
+    private Polyline[] polylines = new Polyline[2];
 
 
     @Override
@@ -112,14 +119,13 @@ public class ServiceActivity extends FragmentActivity implements OnMapReadyCallb
         buttonController();
 
 
-
     }   //Main Method
 
     private void googleMapController(String strLat, String strLng) {
 
         Button button = (Button) findViewById(R.id.btnGoogleMap);
 
-        final String strUri = "geo:0,0?q="+strLat+", "+strLng+" (" + name + ")";
+        final String strUri = "geo:0,0?q=" + strLat + ", " + strLng + " (" + name + ")";
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -190,6 +196,8 @@ public class ServiceActivity extends FragmentActivity implements OnMapReadyCallb
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
 
+                polylines[1].remove();
+                userMarker.remove();
                 aBoolean = false;   // คลิกอีกครั้งจะไม่มาที่นี่
                 aBoolean2 = true;
                 //เปลี่ยน Label Button เป็น ออกเดินทาง
@@ -300,6 +308,7 @@ public class ServiceActivity extends FragmentActivity implements OnMapReadyCallb
 
         //หลังจาก ไปถ่ายรูป aBoolean จะเป็น False
         if (!aBoolean) {
+
 
             Log.d("14novV2", "Min ==>" + 0);
 
@@ -523,12 +532,12 @@ public class ServiceActivity extends FragmentActivity implements OnMapReadyCallb
 
             //ก่อนออกเดินทาง
             //Confirm Click ย้ำคิด ย้ำทำ ว่า คลิกแล้วนะ
+
             confirmClick();
 
         } else {
 
             //นี่คือ สภาวะ หลังจากถ่ายรูปเสร็จ และ คลิกออกเดินทาง
-
             myAlertStart();
 
 
@@ -539,6 +548,7 @@ public class ServiceActivity extends FragmentActivity implements OnMapReadyCallb
     }   // onClick
 
     private void myAlertStart() {
+
 
         AlertDialog.Builder builder = new AlertDialog.Builder(ServiceActivity.this);
         builder.setCancelable(false);
@@ -566,10 +576,12 @@ public class ServiceActivity extends FragmentActivity implements OnMapReadyCallb
 
                 findWaitMinus();
 
+
                 dialogInterface.dismiss();
 
             }
         });
+        builder.show();
 
 
     }
@@ -649,12 +661,10 @@ public class ServiceActivity extends FragmentActivity implements OnMapReadyCallb
                 createMarkerOriginDestination();
 
 
-
                 LatLng latLng = new LatLng(latADouble, lngADouble);
                 requestDirection(latLng, origin, Color.MAGENTA);
 
                 requestDirection(origin, destination, Color.RED);
-
 
 
                 //Show Text
@@ -763,10 +773,10 @@ public class ServiceActivity extends FragmentActivity implements OnMapReadyCallb
             mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng, 16));
 
             //Create Marker Driver
-            mMap.addMarker(new MarkerOptions()
+            userMarkerOptions = new MarkerOptions()
                     .position(latLng)
-                    .icon(BitmapDescriptorFactory.fromResource(R.mipmap.mk_driver)));
-
+                    .icon(BitmapDescriptorFactory.fromResource(R.mipmap.mk_driver));
+            userMarker = mMap.addMarker(userMarkerOptions);
 
 
         } catch (Exception e) {
@@ -796,12 +806,17 @@ public class ServiceActivity extends FragmentActivity implements OnMapReadyCallb
 
         if (direction.isOK()) {
 
+
+
             ArrayList<LatLng> directionPositionList = direction.getRouteList().get(0).getLegList().get(0).getDirectionPoint();
 
-            PolylineOptions polylineOptions = DirectionConverter.createPolyline(this, directionPositionList, 5, colorAnInt);
-            mMap.addPolyline(polylineOptions);
+            polylineOptionses[indexPolyline] = DirectionConverter.createPolyline(this, directionPositionList, 5, colorAnInt);
+            polylines[indexPolyline] = mMap.addPolyline(polylineOptionses[indexPolyline]);
 
+            indexPolyline += 1;
             colorAnInt = Color.BLUE;
+
+            directionPositionList.clear();
 
         }   // if
 
@@ -812,11 +827,11 @@ public class ServiceActivity extends FragmentActivity implements OnMapReadyCallb
         //และ จุดไปส่งลูกค้า Destination
         mMap.addMarker(new MarkerOptions()
                 .position(origin)
-        .icon(BitmapDescriptorFactory.fromResource(R.mipmap.mk_origin)));
+                .icon(BitmapDescriptorFactory.fromResource(R.mipmap.mk_origin)));
 
         mMap.addMarker(new MarkerOptions()
                 .position(destination)
-        .icon(BitmapDescriptorFactory.fromResource(R.mipmap.mk_desination)));
+                .icon(BitmapDescriptorFactory.fromResource(R.mipmap.mk_desination)));
     }
 
     @Override
