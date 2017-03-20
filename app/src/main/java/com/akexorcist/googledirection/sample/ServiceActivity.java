@@ -28,7 +28,6 @@ import com.akexorcist.googledirection.DirectionCallback;
 import com.akexorcist.googledirection.GoogleDirection;
 import com.akexorcist.googledirection.constant.TransportMode;
 import com.akexorcist.googledirection.model.Direction;
-import com.akexorcist.googledirection.model.Route;
 import com.akexorcist.googledirection.util.DirectionConverter;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -37,6 +36,7 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.gms.maps.model.PolylineOptions;
 import com.squareup.okhttp.FormEncodingBuilder;
 import com.squareup.okhttp.OkHttpClient;
 import com.squareup.okhttp.Request;
@@ -82,6 +82,7 @@ public class ServiceActivity extends FragmentActivity implements OnMapReadyCallb
     private LatLng origin = new LatLng(13.668880, 100.623441);
     private LatLng destination = new LatLng(13.678262, 100.623612);
     private String[] colors = {"#7f000077", "#7f31c7c5", "#7fff8a00"};
+    private int colorAnInt = Color.BLUE;
 
 
     @Override
@@ -645,7 +646,16 @@ public class ServiceActivity extends FragmentActivity implements OnMapReadyCallb
                 destination = new LatLng(Double.parseDouble(jobString[10]),
                         Double.parseDouble(jobString[11]));
 
-                requestDirection();
+                createMarkerOriginDestination();
+
+
+
+                LatLng latLng = new LatLng(latADouble, lngADouble);
+                requestDirection(latLng, origin, Color.MAGENTA);
+
+                requestDirection(origin, destination, Color.RED);
+
+
 
                 //Show Text
                 GetPassenger getPassenger = new GetPassenger(context, jobString);
@@ -758,6 +768,7 @@ public class ServiceActivity extends FragmentActivity implements OnMapReadyCallb
                     .icon(BitmapDescriptorFactory.fromResource(R.mipmap.mk_driver)));
 
 
+
         } catch (Exception e) {
             Toast.makeText(ServiceActivity.this, "ไม่สามารถหาพิกัด", Toast.LENGTH_SHORT).show();
 
@@ -767,12 +778,13 @@ public class ServiceActivity extends FragmentActivity implements OnMapReadyCallb
     }  //onMapReady
 
     //  Method ที่ทำหน้าที่ แนะนำเส้นทาง การไปได้ระหว่างจุดสองจุด ไม่เกิน 3 เส้น
-    public void requestDirection() {
+    public void requestDirection(LatLng start, LatLng destinat, int intColor) {
 
-        // Snackbar.make(btnRequestDirection, "Direction Requesting...", Snackbar.LENGTH_SHORT).show();
+        colorAnInt = intColor;
+
         GoogleDirection.withServerKey(serverKey)
-                .from(origin)
-                .to(destination)
+                .from(start)
+                .to(destinat)
                 .transportMode(TransportMode.DRIVING)
                 .alternativeRoute(true)
                 .execute(ServiceActivity.this);
@@ -781,38 +793,31 @@ public class ServiceActivity extends FragmentActivity implements OnMapReadyCallb
 
     @Override
     public void onDirectionSuccess(Direction direction, String rawBody) {
-        // Snackbar.make(btnRequestDirection, "Success with status : " + direction.getStatus(), Snackbar.LENGTH_SHORT).show();
+
         if (direction.isOK()) {
 
-            //นี่คือการสร้าง Marker ของจุดไปรับลูกค้า Origin
-            //และ จุดไปส่งลูกค้า Destination
-            mMap.addMarker(new MarkerOptions()
-                    .position(origin)
-            .icon(BitmapDescriptorFactory.fromResource(R.mipmap.mk_origin)));
+            ArrayList<LatLng> directionPositionList = direction.getRouteList().get(0).getLegList().get(0).getDirectionPoint();
 
-            mMap.addMarker(new MarkerOptions()
-                    .position(destination)
-            .icon(BitmapDescriptorFactory.fromResource(R.mipmap.mk_desination)));
+            PolylineOptions polylineOptions = DirectionConverter.createPolyline(this, directionPositionList, 5, colorAnInt);
+            mMap.addPolyline(polylineOptions);
 
-// ถ้าต้องการ Routing จำนวน 3 เส้น ให้ใช้ ตรงนี้
-           // for (int i = 0; i < direction.getRouteList().size(); i++) {
+            colorAnInt = Color.BLUE;
 
-            // ต้องการ Routing เพียงเส้นใกล้สุดเส้นเดียว
-            for (int i = 0; i < 1; i++) {
-                Route route = direction.getRouteList().get(i);
-                String color = colors[i % colors.length];
-                ArrayList<LatLng> directionPositionList = route.getLegList().get(0).getDirectionPoint();
-                mMap.addPolyline(DirectionConverter.createPolyline(this, directionPositionList, 5, Color.parseColor(color)));
+        }   // if
 
-                Log.d("13MarchV1", "ระยะ ระหว่างจุด ==> " + route.getLegList().get(0).getDistance().getText());
-                Log.d("13MarchV1", "เวลา ระหว่างจุด ==> " + route.getLegList().get(0).getDuration().getText());
-
-
-            }   // for
-
-            //  btnRequestDirection.setVisibility(View.GONE);
-        }
     }   // onDirectionSuccess
+
+    private void createMarkerOriginDestination() {
+        //นี่คือการสร้าง Marker ของจุดไปรับลูกค้า Origin
+        //และ จุดไปส่งลูกค้า Destination
+        mMap.addMarker(new MarkerOptions()
+                .position(origin)
+        .icon(BitmapDescriptorFactory.fromResource(R.mipmap.mk_origin)));
+
+        mMap.addMarker(new MarkerOptions()
+                .position(destination)
+        .icon(BitmapDescriptorFactory.fromResource(R.mipmap.mk_desination)));
+    }
 
     @Override
     public void onDirectionFailure(Throwable t) {
