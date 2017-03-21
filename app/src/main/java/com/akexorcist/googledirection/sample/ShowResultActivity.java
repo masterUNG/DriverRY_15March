@@ -27,8 +27,38 @@ public class ShowResultActivity extends AppCompatActivity {
         //Show View
         showView();
 
+        //Edit Status
+        editStatus();
+
 
     }   // Main Method
+
+    private void editStatus() {
+
+        try {
+
+            //For Edit Status at jobTABLE
+            EditStatusTo2 editStatusTo2 = new EditStatusTo2(ShowResultActivity.this,
+                    loginStrings[0], "4", "5");
+            editStatusTo2.execute();
+            if (Boolean.parseBoolean(editStatusTo2.get())) {
+                Log.d("21MarchV3", "Status 4 ==> 5 OK for jobTABLE");
+            }
+
+            //For Edit status at userTABLE_ry
+            EditStatusDriver editStatusDriver = new EditStatusDriver(ShowResultActivity.this,
+                    loginStrings[0], "5");
+            editStatusDriver.execute();
+            if (Boolean.parseBoolean(editStatusDriver.get())) {
+                Log.d("21MarchV3", "Status 4 ==> 5 OK for userTABLE");
+            }
+
+
+        } catch (Exception e) {
+            Log.d("21MarchV3", "e editStatus ==> " + e.toString());
+        }
+
+    }   // editStatus
 
     private void initialView() {
         idDriverTextView = (TextView) findViewById(R.id.txtIDDriver);

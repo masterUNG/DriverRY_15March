@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Tue Mar 21 14:06:01 ICT 2017
+#Tue Mar 21 15:49:46 ICT 2017
 210.set=ANDROID_RESOURCE
 282.file=/Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_15March/app/build/intermediates/res/resources-debug.ap_/res/color/switch_thumb_material_dark.xml
 14.set=ANDROID_RESOURCE
