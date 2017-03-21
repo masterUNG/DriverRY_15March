@@ -32,12 +32,12 @@
         "source": "/Users/masterUNG/.android/build-cache/255829816c642a8405d9bded49fe28171881b2f3/output/res/drawable-hdpi-v4/common_google_signin_btn_text_dark_pressed.9.png"
     },
     {
-        "merged": "/Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_15March/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/notify_panel_notification_icon_bg.png",
-        "source": "/Users/masterUNG/.android/build-cache/bf668d511e04c840378de0cf9d3419a738a60c71/output/res/drawable-hdpi-v4/notify_panel_notification_icon_bg.png"
-    },
-    {
         "merged": "/Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_15March/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_switch_track_mtrl_alpha.9.png",
         "source": "/Users/masterUNG/.android/build-cache/bf668d511e04c840378de0cf9d3419a738a60c71/output/res/drawable-hdpi-v4/abc_switch_track_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "/Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_15March/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/notify_panel_notification_icon_bg.png",
+        "source": "/Users/masterUNG/.android/build-cache/bf668d511e04c840378de0cf9d3419a738a60c71/output/res/drawable-hdpi-v4/notify_panel_notification_icon_bg.png"
     },
     {
         "merged": "/Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_15March/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_list_selector_disabled_holo_light.9.png",

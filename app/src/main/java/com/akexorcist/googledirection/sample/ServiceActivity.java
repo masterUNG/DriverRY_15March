@@ -259,12 +259,8 @@ public class ServiceActivity extends FragmentActivity implements OnMapReadyCallb
             Log.d("19janV1", "ผลของการ Update ==> " + strResult);
 
 
-            Intent intent = new Intent(ServiceActivity.this, MonitorActivity.class);
-            intent.putExtra("Login", loginStrings);
-            intent.putExtra("Lat", destination.latitude);
-            intent.putExtra("Lng", destination.longitude);
-            startActivity(intent);
-            finish();
+            // Intent to Monitor
+            intentToMonitor();
 
         } catch (Exception e) {
             Log.d("19janV1", "e ==> " + e.toString());
@@ -272,6 +268,17 @@ public class ServiceActivity extends FragmentActivity implements OnMapReadyCallb
 
 
     }   // findWaitMinus
+
+    private void intentToMonitor() {
+        Log.d("21MarchV1", "jobString.length ==> " + jobString.length);
+        Intent intent = new Intent(ServiceActivity.this, MonitorActivity.class);
+        intent.putExtra("Login", loginStrings);
+        intent.putExtra("Lat", destination.latitude);
+        intent.putExtra("Lng", destination.longitude);
+        intent.putExtra("ID_job", jobString);
+        startActivity(intent);
+        finish();
+    }
 
     private void bindWidget() {
         nameTextView = (TextView) findViewById(R.id.textView3);

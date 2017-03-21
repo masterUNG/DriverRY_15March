@@ -18,5 +18,6 @@
 
     <string name="finishJob">ทำงานเสร็จสิ้นแล้ว</string>
     <string name="remember">จดจำ User Password</string>
+    <string name="confirm1">ยืนยัน</string>
 
 </resources>

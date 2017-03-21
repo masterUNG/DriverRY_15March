@@ -70,6 +70,8 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyCBWrgN_x8AJ6umxzHTLmSnzKby-awKLdc" />
 
+        <activity android:name="com.akexorcist.googledirection.sample.ShowResultActivity" />
+        <activity android:name="com.akexorcist.googledirection.sample.WalkActivity" />
         <activity
             android:name="com.google.android.gms.common.api.GoogleApiActivity"
             android:exported="false"

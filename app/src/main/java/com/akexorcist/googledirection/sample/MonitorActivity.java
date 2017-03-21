@@ -1,6 +1,7 @@
 package com.akexorcist.googledirection.sample;
 
 import android.Manifest;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.location.Criteria;
@@ -12,6 +13,8 @@ import android.os.Handler;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentActivity;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 
 import com.akexorcist.googledirection.DirectionCallback;
 import com.akexorcist.googledirection.GoogleDirection;
@@ -29,11 +32,11 @@ import com.google.android.gms.maps.model.MarkerOptions;
 
 import java.util.ArrayList;
 
-public class MonitorActivity extends FragmentActivity implements OnMapReadyCallback, DirectionCallback {
+public class MonitorActivity extends FragmentActivity implements OnMapReadyCallback, DirectionCallback, View.OnClickListener {
 
     //Explicit
     private GoogleMap mMap;
-    private String[] loginStrings;  // นี่คือ Array ของ user ที่ Login อยู่
+    private String[] loginStrings, jobStrings;  // นี่คือ Array ของ user ที่ Login อยู่
     private LatLng destinationLatLng, startLatLng;
     private LocationManager locationManager;
     private Criteria criteria;
@@ -42,28 +45,24 @@ public class MonitorActivity extends FragmentActivity implements OnMapReadyCallb
     private String serverKey = "AIzaSyDE4-7-stlHCxH4BB539QF9OM4VU1u6HSs";
     private boolean aBoolean = true;
     private Marker marker;
-    private Handler handler = new Handler();
-    private int secAnInt = 60000;    // ความถี่ ของการใช้ API
+    private Button button;
+
+
     private boolean aBoolean2 = true;
     private double somLengthADouble = 0.0;
 
-
-
-
+    private int secAnInt = 60000;    // ความถี่ ของการใช้ API
+    private Handler handler = new Handler();
     private Runnable runnable = new Runnable() {
         @Override
         public void run() {
+
             try {
 
                 marker.remove();
-
-
                 LatLng latLng = new LatLng(userLatADouble, userLngADouble); // จุดล่าสุด
-
                 createRoutingMap(startLatLng, latLng);
-
                 createCarMarker();
-
 
             } catch (Exception e) {
                 e.printStackTrace();
@@ -85,9 +84,16 @@ public class MonitorActivity extends FragmentActivity implements OnMapReadyCallb
         //Setup Parameter
         setupParameter();
 
+        //Button Controller
+        buttonController();
 
 
     }   // Main Method
+
+    private void buttonController() {
+        button = (Button) findViewById(R.id.btnFinishJob);
+        button.setOnClickListener(MonitorActivity.this);
+    }
 
     @Override
     protected void onResume() {
@@ -187,7 +193,6 @@ public class MonitorActivity extends FragmentActivity implements OnMapReadyCallb
         criteria.setBearingRequired(false);
 
 
-
     }
 
     private void getValueFromIntent() {
@@ -199,6 +204,14 @@ public class MonitorActivity extends FragmentActivity implements OnMapReadyCallb
             double lat = getIntent().getDoubleExtra("Lat", doubles[0]);
             double lng = getIntent().getDoubleExtra("Lng", doubles[1]);
             destinationLatLng = new LatLng(lat, lng);
+            jobStrings = getIntent().getStringArrayExtra("ID_job");
+
+            if (jobStrings == null) {
+                Log.d("21MarchV1", "jobString ==> null");
+
+                jobStrings = findJobString();
+
+            }   //if
 
         } catch (Exception e) {
             Log.d("14MarchV1", "e getValue ==> " + e.toString());
@@ -206,6 +219,27 @@ public class MonitorActivity extends FragmentActivity implements OnMapReadyCallb
         }
 
     }   // getValue
+
+    private String[] findJobString() {
+
+        try {
+
+            MyConstant myConstant = new MyConstant();
+            String[] columnStrings = myConstant.getJobStrings();
+            String[] strings = new String[columnStrings.length];
+            GetJobWhereIdDriverStatus getJobWhereIdDriverStatus = new GetJobWhereIdDriverStatus(MonitorActivity.this);
+            getJobWhereIdDriverStatus.execute(loginStrings[0], "4");
+            String s = getJobWhereIdDriverStatus.get();
+            Log.d("21MarchV1", "JSON ==> " + s);
+
+
+
+        } catch (Exception e) {
+            Log.d("21MarchV1", "e findJob ==> " + e.toString());
+        }
+
+        return new String[0];
+    }
 
     private void forCreateFragment() {
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
@@ -226,7 +260,7 @@ public class MonitorActivity extends FragmentActivity implements OnMapReadyCallb
         startLatLng = new LatLng(userLatADouble, userLngADouble);
         createRoutingMap(startLatLng, destinationLatLng);
 
-       // myLoop();
+        // myLoop();
 
         createCarMarker();
 
@@ -304,7 +338,6 @@ public class MonitorActivity extends FragmentActivity implements OnMapReadyCallb
                 .icon(BitmapDescriptorFactory.fromResource(R.mipmap.mk_origin)));
 
 
-
     }   // createMarker
 
     private void createMapAndSetup() {
@@ -341,9 +374,6 @@ public class MonitorActivity extends FragmentActivity implements OnMapReadyCallb
             String[] strings = strLength.split(" ");
 
 
-
-
-
             double douAdd = Double.parseDouble(strings[0]);
 
             if (douAdd == 1 && strings[1].equals("m")) {
@@ -355,8 +385,7 @@ public class MonitorActivity extends FragmentActivity implements OnMapReadyCallb
             }
 
             somLengthADouble = somLengthADouble + douAdd;
-            Log.d("16MarchV1", "ระยะจริง ที่ยังไม่ลบ ระยะแนะ ==> " + somLengthADouble);
-
+            Log.d("16MarchV1", "ระยะจริง ที่วิ่งจริง ==> " + somLengthADouble);
 
 
         } else {
@@ -372,5 +401,20 @@ public class MonitorActivity extends FragmentActivity implements OnMapReadyCallb
         Log.d("14MarchV1", "t ==> " + t.getMessage());
 
     }   // onDirectionFailure
+
+    @Override
+    public void onClick(View view) {
+
+        String[] strings = getIntent().getStringArrayExtra("ID_job");
+       // Log.d("21MarchV1", "strings.length ==> " + strings.length);
+
+        Intent intent = new Intent(MonitorActivity.this, ShowResultActivity.class);
+        intent.putExtra("Login", loginStrings);
+        intent.putExtra("ID_job", strings);
+        intent.putExtra("Length", Double.toString(somLengthADouble));
+        startActivity(intent);
+        finish();
+
+    }   // onClick
 
 }   // Main Class
