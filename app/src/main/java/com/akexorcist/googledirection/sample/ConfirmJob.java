@@ -72,6 +72,8 @@ public class ConfirmJob extends AppCompatActivity {
             } else if (intStatus == 4) {
                 goToMonitor();
 
+            } else if (intStatus == 5) {
+                goToShowResult();
             }
 
 
@@ -80,6 +82,10 @@ public class ConfirmJob extends AppCompatActivity {
         }
 
     }   // checkStatus
+
+    private void goToShowResult() {
+
+    }
 
     private void goToMonitor() {
 

@@ -54,6 +54,10 @@ public class ShowResultActivity extends AppCompatActivity {
             }
 
 
+            //For Edit Length to Column Length
+
+
+
         } catch (Exception e) {
             Log.d("21MarchV3", "e editStatus ==> " + e.toString());
         }
