@@ -30,6 +30,9 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
+import org.json.JSONArray;
+import org.json.JSONObject;
+
 import java.util.ArrayList;
 
 public class MonitorActivity extends FragmentActivity implements OnMapReadyCallback, DirectionCallback, View.OnClickListener {
@@ -206,10 +209,11 @@ public class MonitorActivity extends FragmentActivity implements OnMapReadyCallb
             destinationLatLng = new LatLng(lat, lng);
             jobStrings = getIntent().getStringArrayExtra("ID_job");
 
+
             if (jobStrings == null) {
-                Log.d("21MarchV1", "jobString ==> null");
 
                 jobStrings = findJobString();
+                Log.d("21MarchV2", "จำนวน jobString ที่รับค่าจาก findJob ==> " + jobStrings.length);
 
             }   //if
 
@@ -232,13 +236,22 @@ public class MonitorActivity extends FragmentActivity implements OnMapReadyCallb
             String s = getJobWhereIdDriverStatus.get();
             Log.d("21MarchV1", "JSON ==> " + s);
 
+            JSONArray jsonArray = new JSONArray(s);
+            JSONObject jsonObject = jsonArray.getJSONObject(0);
 
+            for (int i=0;i<strings.length;i++) {
+                strings[i] = jsonObject.getString(columnStrings[i]);
+                Log.d("21MarchV1", "strings(" + i + ") ==> " + strings[i]);
+            }
+
+            return strings;
 
         } catch (Exception e) {
             Log.d("21MarchV1", "e findJob ==> " + e.toString());
+            return null;
         }
 
-        return new String[0];
+
     }
 
     private void forCreateFragment() {
@@ -405,12 +418,12 @@ public class MonitorActivity extends FragmentActivity implements OnMapReadyCallb
     @Override
     public void onClick(View view) {
 
-        String[] strings = getIntent().getStringArrayExtra("ID_job");
-       // Log.d("21MarchV1", "strings.length ==> " + strings.length);
+//        String[] strings = getIntent().getStringArrayExtra("ID_job");
+//       Log.d("21MarchV2", "ค่าที่ Monitor ส่งในตัวแปร key ID_job ==> " + strings.length);
 
         Intent intent = new Intent(MonitorActivity.this, ShowResultActivity.class);
         intent.putExtra("Login", loginStrings);
-        intent.putExtra("ID_job", strings);
+        intent.putExtra("ID_job", jobStrings);
         intent.putExtra("Length", Double.toString(somLengthADouble));
         startActivity(intent);
         finish();

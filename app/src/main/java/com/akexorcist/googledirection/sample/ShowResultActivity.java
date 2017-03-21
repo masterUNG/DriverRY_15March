@@ -2,6 +2,7 @@ package com.akexorcist.googledirection.sample;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -39,7 +40,7 @@ public class ShowResultActivity extends AppCompatActivity {
 
     private void showView() {
         idDriverTextView.setText("idDriver ==> " + loginStrings[0]);
-      //  idJobTextView.setText("idJob ==> " + jobStrings[0]);
+        idJobTextView.setText("idJob ==> " + jobStrings[0]);
         lengthTextView.setText("Length ==> " + lengthString);
     }
 
@@ -48,10 +49,10 @@ public class ShowResultActivity extends AppCompatActivity {
         jobStrings = getIntent().getStringArrayExtra("ID_job");
         lengthString = getIntent().getStringExtra("Length");
 
-//        Log.d("21MarchV1", "jobString.length ==> " + jobStrings.length);
-//        for (int i=0;i<jobStrings.length;i++) {
-//            Log.d("21MarchV1", "jobString(" + i + ") ==> " + jobStrings[i]);
-//        }
+        Log.d("21MarchV2", "jobString.length ==> " + jobStrings.length);
+        for (int i = 0; i < jobStrings.length; i++) {
+            Log.d("21MarchV2", "jobString(" + i + ") ==> " + jobStrings[i]);
+        }
 
     }
 
