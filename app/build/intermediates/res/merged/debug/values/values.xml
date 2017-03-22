@@ -738,6 +738,7 @@
     <string name="meter">ค่าโดยสาร</string>
     <string name="no">ไม่ตกลง</string>
     <string name="ok">ตกลง</string>
+    <string name="ok_work">พร้อมทำงาน</string>
     <string name="onside">ถึงที่รับ</string>
     <string name="remember">จดจำ User Password</string>
     <string name="request_direction">Request Direction</string>

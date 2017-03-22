@@ -28,10 +28,7 @@ public class ConfirmJob extends AppCompatActivity {
         setContentView(R.layout.activity_confirm_job);
 
         //Get Value of Login Pass จะรู้ว่าใคร Login
-        loginString = getIntent().getStringArrayExtra("Login");
-        for (int i = 0; i < loginString.length; i++) {
-            Log.d("29decV1", "loginString(" + i + ")==>" + loginString[i]);
-        }   // for
+        getValueFromIntent();
 
         //Login Status ==> 1
         // editStatus(1);
@@ -43,6 +40,13 @@ public class ConfirmJob extends AppCompatActivity {
         checkJob();
 
     }   // Main Method
+
+    private void getValueFromIntent() {
+        loginString = getIntent().getStringArrayExtra("Login");
+        for (int i = 0; i < loginString.length; i++) {
+            Log.d("29decV1", "loginString(" + i + ")==>" + loginString[i]);
+        }   // for
+    }
 
     private void checkStatus() {
 
@@ -60,20 +64,15 @@ public class ConfirmJob extends AppCompatActivity {
 
             int intStatus = Integer.parseInt(strStatus);
             if (intStatus == 2) {
-                Intent intent = new Intent(ConfirmJob.this, ServiceActivity.class);
-                intent.putExtra("Login", loginString);
-                startActivity(intent);
-                finish();
+                goToService1();
             } else if (intStatus == 3) {
-                Intent intent = new Intent(ConfirmJob.this, ServiceActivity.class);
-                intent.putExtra("Login", loginString);
-                intent.putExtra("aBoolean2", true);
-                startActivity(intent);
+                goToService2();
             } else if (intStatus == 4) {
                 goToMonitor();
-
             } else if (intStatus == 5) {
                 goToShowResult();
+            } else if (intStatus == 6) {
+                goToWalk();
             }
 
 
@@ -83,9 +82,63 @@ public class ConfirmJob extends AppCompatActivity {
 
     }   // checkStatus
 
+    private void goToService2() {
+        Intent intent = new Intent(ConfirmJob.this, ServiceActivity.class);
+        intent.putExtra("Login", loginString);
+        intent.putExtra("aBoolean2", true);
+        startActivity(intent);
+        finish();
+    }
+
+    private void goToService1() {
+        Intent intent = new Intent(ConfirmJob.this, ServiceActivity.class);
+        intent.putExtra("Login", loginString);
+        startActivity(intent);
+        finish();
+    }
+
+    private void goToWalk() {
+        Intent intent = new Intent(ConfirmJob.this, WalkActivity.class);
+        intent.putExtra("Login", loginString);
+        startActivity(intent);
+        finish();
+    }
+
     private void goToShowResult() {
 
-    }
+        try {
+
+            GetJobWhereIdDriverStatus getJobWhereIdDriverStatus = new GetJobWhereIdDriverStatus(ConfirmJob.this);
+            getJobWhereIdDriverStatus.execute(loginString[0], "5");
+            String s = getJobWhereIdDriverStatus.get();
+
+            Log.d("22MarchV1", "JSON ==> " + s);
+
+            MyConstant myConstant = new MyConstant();
+            String[] columnStrings = myConstant.getJobStrings();
+            String[] jobStrings = new String[columnStrings.length];
+
+            JSONArray jsonArray = new JSONArray(s);
+            JSONObject jsonObject = jsonArray.getJSONObject(0);
+
+            for (int i=0;i<jobStrings.length;i++) {
+                jobStrings[i] = jsonObject.getString(columnStrings[i]);
+                Log.d("22MarchV1", "jobStrings(" + i + ") ==> " + jobStrings[i]);
+            }
+
+            Intent intent = new Intent(ConfirmJob.this, ShowResultActivity.class);
+            intent.putExtra("Login", loginString);
+            intent.putExtra("ID_job", jobStrings);
+            intent.putExtra("Length", jobStrings[12]);
+            startActivity(intent);
+            finish();
+
+
+        } catch (Exception e) {
+            Log.d("22MarchV1", "e goToShowResult ==> " + e.toString());
+        }
+
+    }   // goToShowResult
 
     private void goToMonitor() {
 
@@ -111,7 +164,6 @@ public class ConfirmJob extends AppCompatActivity {
             intent.putExtra("Lat", douLat);
             intent.putExtra("Lng", douLng);
             startActivity(intent);
-
 
 
         } catch (Exception e) {

@@ -30,7 +30,7 @@ public class MyConstant {
             "Lng_start",
             "NameEnd",
             "Lat_end",
-            "Lng_end"};
+            "Lng_end", "Length"};
 
     private String urlGetPassengerWhereID = "http://swiftcodingthai.com/ry/get_passenger_where_id.php";
 
