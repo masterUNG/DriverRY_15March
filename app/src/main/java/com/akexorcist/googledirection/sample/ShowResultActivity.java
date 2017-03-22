@@ -55,6 +55,9 @@ public class ShowResultActivity extends AppCompatActivity {
 
 
             //For Edit Length to Column Length
+            EditLengthWhereId editLengthWhereId = new EditLengthWhereId(ShowResultActivity.this,
+                    loginStrings[0], lengthString);
+            editLengthWhereId.execute();
 
 
 

@@ -57,23 +57,28 @@ public class MonitorActivity extends FragmentActivity implements OnMapReadyCallb
     private double somLengthADouble = 0.0;
 
     private int secAnInt = 1000;    // ความถี่ ของการใช้ API
+    private boolean handerABoolean = true;
     private Handler handler = new Handler();
     private Runnable runnable = new Runnable() {
         @Override
         public void run() {
 
-            try {
+            if (handerABoolean) {
+                try {
 
-                marker.remove();
-                LatLng latLng = new LatLng(userLatADouble, userLngADouble); // จุดล่าสุด
-                createRoutingMap(startLatLng, latLng);
-                createCarMarker();
+                    marker.remove();
+                    LatLng latLng = new LatLng(userLatADouble, userLngADouble); // จุดล่าสุด
+                    createRoutingMap(startLatLng, latLng);
+                    createCarMarker();
 
-            } catch (Exception e) {
-                e.printStackTrace();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+                handler.postDelayed(runnable, secAnInt);
+
             }
-            handler.postDelayed(runnable, secAnInt);
-        }
+
+        }   // run
     };
 
     @Override
@@ -434,6 +439,8 @@ public class MonitorActivity extends FragmentActivity implements OnMapReadyCallb
         builder.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
+
+                handerABoolean = false;
 
                 Intent intent = new Intent(MonitorActivity.this, ShowResultActivity.class);
                 intent.putExtra("Login", loginStrings);
