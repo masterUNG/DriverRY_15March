@@ -20,5 +20,6 @@
     <string name="remember">จดจำ User Password</string>
     <string name="confirm1">ยืนยัน</string>
     <string name="ok_work">พร้อมทำงาน</string>
+    <string name="back_office">กลับออฟฟิส</string>
 
 </resources>
