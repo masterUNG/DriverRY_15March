@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_15March/app/src/main/AndroidManifest.xml:2:1-71:12
+ADDED from /Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_15March/app/src/main/AndroidManifest.xml:2:1-72:12
 	package
 		ADDED from /Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_15March/app/src/main/AndroidManifest.xml:3:5-52
 		INJECTED from /Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_15March/app/src/main/AndroidManifest.xml
@@ -64,7 +64,7 @@ MERGED from [com.google.android.gms:play-services-maps:10.0.1] /Users/masterUNG/
 	android:required
 		ADDED from /Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_15March/app/src/main/AndroidManifest.xml:18:9-32
 application
-ADDED from /Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_15March/app/src/main/AndroidManifest.xml:20:5-69:19
+ADDED from /Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_15March/app/src/main/AndroidManifest.xml:20:5-70:19
 MERGED from [com.android.support:design:25.0.1] /Users/masterUNG/.android/build-cache/6c3a5d344a805fb5fd43b6c70790f4e004a44a30/output/AndroidManifest.xml:25:5-20
 MERGED from [com.android.support:appcompat-v7:25.0.1] /Users/masterUNG/.android/build-cache/bf668d511e04c840378de0cf9d3419a738a60c71/output/AndroidManifest.xml:25:5-20
 MERGED from [com.android.support:animated-vector-drawable:25.0.1] /Users/masterUNG/.android/build-cache/8a73df328a833a83f511e2ebec4d379d3f97490f/output/AndroidManifest.xml:22:5-20
@@ -175,9 +175,13 @@ ADDED from /Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_15March/app/s
 	android:name
 		ADDED from /Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_15March/app/src/main/AndroidManifest.xml:67:19-53
 activity#com.akexorcist.googledirection.sample.WalkActivity
-ADDED from /Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_15March/app/src/main/AndroidManifest.xml:68:9-59
+ADDED from /Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_15March/app/src/main/AndroidManifest.xml:68:9-50
 	android:name
 		ADDED from /Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_15March/app/src/main/AndroidManifest.xml:68:19-47
+activity#com.akexorcist.googledirection.sample.BackOfficeActivity
+ADDED from /Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_15March/app/src/main/AndroidManifest.xml:69:9-65
+	android:name
+		ADDED from /Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_15March/app/src/main/AndroidManifest.xml:69:19-53
 uses-sdk
 INJECTED from /Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_15March/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 MERGED from [com.akexorcist:googleDirectionLibrary:1.0.5] /Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_15March/googleDirectionLibrary/build/intermediates/bundles/default/AndroidManifest.xml:7:5-9:41
