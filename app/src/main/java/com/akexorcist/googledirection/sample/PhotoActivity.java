@@ -199,7 +199,18 @@ public class PhotoActivity extends AppCompatActivity {
             Log.d("14novV1", "Result ==>" + s);
 
             if (Boolean.parseBoolean(s)) {
-                finish();
+
+                switch (modeAnInt) {
+                    case 0:
+                        finish();
+                        break;
+                    case 1:
+                        goToConfirmJob();
+                        break;
+                }
+
+
+
             } else {
                 Toast.makeText(context, "Cannot Update Value to Server", Toast.LENGTH_SHORT).show();
             }
@@ -209,6 +220,31 @@ public class PhotoActivity extends AppCompatActivity {
 
 
     }   //MyUpdateJob Class
+
+    private void goToConfirmJob() {
+
+        try {
+
+            EditStatusDriver editStatusDriver = new EditStatusDriver(PhotoActivity.this,
+                    loginStrings[0], "1");
+            editStatusDriver.execute();
+
+            if (Boolean.parseBoolean(editStatusDriver.get())) {
+
+                Intent intent = new Intent(PhotoActivity.this, ConfirmJob.class);
+                intent.putExtra("Login", loginStrings);
+                startActivity(intent);
+                finish();
+
+            } else {
+                Toast.makeText(PhotoActivity.this, "Cannot Edit Status", Toast.LENGTH_SHORT).show();
+            }
+
+        } catch (Exception e) {
+            Log.d("23MarchV1", "e goToConfirmJob ==> " + e.toString());
+        }
+
+    }
 
 
     private void upLoadImage() {
