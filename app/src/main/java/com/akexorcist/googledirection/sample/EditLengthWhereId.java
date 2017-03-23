@@ -14,10 +14,11 @@ import com.squareup.okhttp.Response;
  * Created by masterUNG on 3/21/2017 AD.
  */
 
-public class EditLengthWhereId extends AsyncTask<Void, Void, String>{
+public class EditLengthWhereId extends AsyncTask<Void, Void, String> {
 
     private Context context;
-    private static final String urlPHP = "http://swiftcodingthai.com/ry/editLengthWhereIdStatus.php";
+    private MyConstant myConstant = new MyConstant();
+    private String urlPHP = myConstant.getUrlEditLengthWhereIdStatus();
     private String idDriverString, lengthString;
 
     public EditLengthWhereId(Context context,

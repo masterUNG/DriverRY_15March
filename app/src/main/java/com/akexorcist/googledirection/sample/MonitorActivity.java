@@ -47,15 +47,13 @@ public class MonitorActivity extends FragmentActivity implements OnMapReadyCallb
     private Criteria criteria;
     private double userLatADouble = 0, userLngADouble = 0;
     private Marker destinationMarker, userMarker;
-    private String serverKey = "AIzaSyDE4-7-stlHCxH4BB539QF9OM4VU1u6HSs";
+    private MyConstant myConstant = new MyConstant();
+    private String serverKey = myConstant.getServerKey();
     private boolean aBoolean = true;
     private Marker marker;
     private Button button;
-
-
     private boolean aBoolean2 = true;
     private double somLengthADouble = 0.0;
-
     private int secAnInt = 1000;    // ความถี่ ของการใช้ API
     private boolean handerABoolean = true;
     private Handler handler = new Handler();

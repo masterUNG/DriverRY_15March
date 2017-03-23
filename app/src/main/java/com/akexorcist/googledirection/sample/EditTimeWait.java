@@ -16,7 +16,8 @@ import com.squareup.okhttp.Response;
 public class EditTimeWait extends AsyncTask<Void, Void, String> {
 
     //Explicit
-    private static final String urlPHP = "http://swiftcodingthai.com/ry/edit_timeWait_where_id_status.php";
+    private MyConstant myConstant = new MyConstant();
+    private String urlPHP = myConstant.getUrlEditTimeWaitWhereIdStatus();
     private Context context;
     private String idDriverString, statusString, timeWaitString;
 

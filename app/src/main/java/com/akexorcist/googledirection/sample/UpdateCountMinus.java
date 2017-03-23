@@ -17,7 +17,8 @@ public class UpdateCountMinus extends AsyncTask<Void, Void, String>{
 
     //Explicit
     private Context context;
-    private static final String urlPHP = "http://swiftcodingthai.com/ry/edit_endTime_where_id_status.php";
+    private MyConstant myConstant = new MyConstant();
+    private String urlPHP = myConstant.getUrlEditEndTimeWhereIdStatus();
     private String idDriverString, statusString, endCountTime, countTimeMinus;
 
     public UpdateCountMinus(Context context,

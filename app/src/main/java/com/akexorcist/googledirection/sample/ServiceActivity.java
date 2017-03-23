@@ -64,7 +64,7 @@ public class ServiceActivity extends FragmentActivity implements OnMapReadyCallb
     private ImageView imageView;
     private Button button;
     private String[] loginStrings;
-    private MyConstant myConstant;
+
     private String[] jobString;
     private String phoneString;
     private LocationManager locationManager;
@@ -78,8 +78,8 @@ public class ServiceActivity extends FragmentActivity implements OnMapReadyCallb
     private int startTimeCountMinus = 0;
     private int endTimeCountHour, endTimeCountMinus, endTimeCountDay;
     private String strStartCountTime, endCountTime;
-
-    private String serverKey = "AIzaSyD_6HZwKgnxSOSkMWocLs4-2AViQuPBteQ";
+    private MyConstant myConstant = new MyConstant();
+    private String serverKey = myConstant.getServerKey();
     private LatLng camera = new LatLng(13.667837, 100.621810);
     private LatLng origin = new LatLng(13.668880, 100.623441);
     private LatLng destination = new LatLng(13.678262, 100.623612);
@@ -155,7 +155,7 @@ public class ServiceActivity extends FragmentActivity implements OnMapReadyCallb
     }
 
     private void getValueFromJSON() {
-        myConstant = new MyConstant();
+
 
         try {
 

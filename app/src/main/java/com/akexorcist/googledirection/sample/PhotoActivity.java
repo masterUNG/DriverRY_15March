@@ -162,6 +162,7 @@ public class PhotoActivity extends AppCompatActivity {
 
         //Explicit
         private Context context;
+        private MyConstant myConstant = new MyConstant();
 
         public MyUpdateJob(Context context) {
             this.context = context;
@@ -177,7 +178,7 @@ public class PhotoActivity extends AppCompatActivity {
                         .add("isAdd", "true")
                         .add("id", idjobString)
                         .add("Meter", meterString)
-                        .add("ImageMeter", "http://swiftcodingthai.com/ry/Image" + imageNameString)
+                        .add("ImageMeter", myConstant.getUrlImage() + imageNameString)
                         .build();
                 Request.Builder builder = new Request.Builder();
                 Request request = builder.url(strings[0]).post(requestBody).build();

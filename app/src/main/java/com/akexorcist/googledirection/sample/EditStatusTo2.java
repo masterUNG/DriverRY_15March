@@ -17,7 +17,8 @@ import com.squareup.okhttp.Response;
 public class EditStatusTo2 extends AsyncTask<Void, Void, String> {
 
     //Explicit
-    private static final String urlJSON = "http://swiftcodingthai.com/ry/edit_status_where_id.php";
+    private MyConstant myConstant = new MyConstant();
+    private String urlJSON = myConstant.getUrlEditStatusWhereId();
     private Context context;
     private String idDriverString;
     private String status_oldString;

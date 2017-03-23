@@ -17,7 +17,8 @@ import com.squareup.okhttp.Response;
 public class GetJobWhereIdDriverStatus extends AsyncTask<String, Void, String>{
 
     private Context context;
-    private static final String urlPHP = "http://swiftcodingthai.com/ry/get_job_where_idDriver_Status.php";
+    private MyConstant myConstant = new MyConstant();
+    private String urlPHP = myConstant.getUrlGetJobWhereIdDriverStatus();
 
     public GetJobWhereIdDriverStatus(Context context) {
         this.context = context;

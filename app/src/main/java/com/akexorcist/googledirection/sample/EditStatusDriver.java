@@ -16,7 +16,8 @@ import com.squareup.okhttp.Response;
 
 public class EditStatusDriver extends AsyncTask<Void, Void, String> {
     private Context context;
-    private static final String urlPHP = "http://swiftcodingthai.com/ry/edit_status_driver.php";
+    private MyConstant myConstant = new MyConstant();
+    private String urlPHP = myConstant.getUrlEditStatusDriver();
     private String idString, statusString;
     private static final String tag = "1decv1";
 

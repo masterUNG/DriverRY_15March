@@ -16,7 +16,8 @@ import com.squareup.okhttp.Response;
 
 public class EditWalkTimeWhereIdStatus extends AsyncTask<String, Void, String>{
 
-    private static final String urlPHP = "http://swiftcodingthai.com/ry/editWalkTimeWhereIdStatus.php";
+    private MyConstant myConstant = new MyConstant();
+    private String urlPHP = myConstant.getUrlEditWalkTimeWhereIdStatus();
     private Context context;
 
     public EditWalkTimeWhereIdStatus(Context context) {
