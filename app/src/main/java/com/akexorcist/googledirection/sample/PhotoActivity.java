@@ -38,7 +38,8 @@ public class PhotoActivity extends AppCompatActivity {
     private String meterString, imagePathString, imageNameString;
     private boolean aBoolean = true;
     private String idjobString, id_DriverString;
-
+    private int modeAnInt = 0;
+    private String[] loginStrings;
 
 
     @Override
@@ -47,28 +48,45 @@ public class PhotoActivity extends AppCompatActivity {
         setContentView(R.layout.activity_photo);
 
         //Bind Widget
-        showPhotoImageView = (ImageView) findViewById(R.id.imageView4);
-        takePhotoImage = (ImageView) findViewById(R.id.imageView3);
-        editText = (EditText) findViewById(R.id.editText3);
-        button = (Button) findViewById(R.id.button3);
+        bindWidget();
 
         //Get Value From Intent
-        idjobString = getIntent().getStringExtra("id_job");
-        Log.d("14novV1", "idJob ==> " + idjobString);
-        id_DriverString = getIntent().getStringExtra("id_Driver");
+        getValueFromIntent();
 
         //Buttom Controller
+        buttomController();
+
+        //takePhoto Controller
+        takePhotoController();
+
+
+    }   //Main Method
+
+    private void takePhotoController() {
+        takePhotoImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+
+                startActivityForResult(intent, 0);
+
+            }   // onclick
+        });
+    }
+
+    private void buttomController() {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-              //Get Value from Edit Text
+                //Get Value from Edit Text
                 meterString = editText.getText().toString().trim();
 
                 //Check Space
                 if (meterString.equals("")) {
                     //Have Space
-                    MyAlert myAlert = new MyAlert(PhotoActivity.this,R.drawable.bird48,
+                    MyAlert myAlert = new MyAlert(PhotoActivity.this, R.drawable.bird48,
                             "ยังไม่ได้กรอกค่าโดยสาร", "กรุณากรอก ค่าโดยสาร ด้วยค่ะ");
                     myAlert.myDialog();
 
@@ -88,38 +106,54 @@ public class PhotoActivity extends AppCompatActivity {
 
             } // onClick
         });
+    }
 
-        //takePhoto Controller
-        takePhotoImage.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+    private void getValueFromIntent() {
+        idjobString = getIntent().getStringExtra("id_job");
+        Log.d("14novV1", "idJob ==> " + idjobString);
+        id_DriverString = getIntent().getStringExtra("id_Driver");
 
-                Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        modeAnInt = getIntent().getIntExtra("Mode", 0);
+        Log.d("23MarchV1", "modeAnInt ==> " + modeAnInt);
+        loginStrings = getIntent().getStringArrayExtra("Login");
 
-                startActivityForResult(intent, 0);
+    }
 
-            }   // onclick
-        });
-
-
-    }   //Main Method
+    private void bindWidget() {
+        showPhotoImageView = (ImageView) findViewById(R.id.imageView4);
+        takePhotoImage = (ImageView) findViewById(R.id.imageView3);
+        editText = (EditText) findViewById(R.id.editText3);
+        button = (Button) findViewById(R.id.button3);
+    }
 
     @Override
     public void onBackPressed() {
-         super.onBackPressed();
+        super.onBackPressed();
     }
 
     private void upLoadToServer() {
 
         upLoadImage();
-        upDateString();
+        upDataString();
 
     }   // upload
 
-    private void upDateString() {
+    private void upDataString() {
+
+        String s = null;
         MyConstant myConstant = new MyConstant();
         MyUpdateJob myUpdateJob = new MyUpdateJob(PhotoActivity.this);
-        myUpdateJob.execute(myConstant.getUrlEditJobString());
+
+        switch (modeAnInt) {
+            case 0:
+                s = myConstant.getUrlEditJobString();
+                break;
+            case 1:
+                s = myConstant.getUrlEditMeterBack();
+                break;
+        }
+
+        myUpdateJob.execute(s);
 
 
     }   // upDate
@@ -167,14 +201,11 @@ public class PhotoActivity extends AppCompatActivity {
             if (Boolean.parseBoolean(s)) {
                 finish();
             } else {
-                Toast.makeText(context,"Cannot Update Value to Server", Toast.LENGTH_SHORT).show();
+                Toast.makeText(context, "Cannot Update Value to Server", Toast.LENGTH_SHORT).show();
             }
 
 
-
-
         }   // onPost
-
 
 
     }   //MyUpdateJob Class
@@ -248,7 +279,7 @@ public class PhotoActivity extends AppCompatActivity {
 
         String result = null;
         String[] strings = {MediaStore.Images.Media.DATA};
-        Cursor cursor = getContentResolver().query(uri,strings, null, null, null);
+        Cursor cursor = getContentResolver().query(uri, strings, null, null, null);
 
         if (cursor != null) {
 
@@ -261,8 +292,6 @@ public class PhotoActivity extends AppCompatActivity {
         }
 
         return result;
-
-
 
 
     }

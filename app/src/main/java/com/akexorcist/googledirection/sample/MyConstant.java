@@ -42,7 +42,11 @@ public class MyConstant {
     private String passwordFTPString = "Abc12345";
 
     private String urlEditJobString = "http://swiftcodingthai.com/ry/edit_job_where_id_ry_master.php";
+    private String urlEditMeterBack = "http://swiftcodingthai.com/ry/editMeterBack.php";
 
+    public String getUrlEditMeterBack() {
+        return urlEditMeterBack;
+    }
 
     public String getUrlEditJobString() {
         return urlEditJobString;

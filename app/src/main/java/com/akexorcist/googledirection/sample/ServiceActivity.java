@@ -208,6 +208,10 @@ public class ServiceActivity extends FragmentActivity implements OnMapReadyCallb
                 intent.putExtra("id_job", jobString[0]);
                 intent.putExtra("phone_customer", phoneString);
                 intent.putExtra("id_Driver", loginStrings[0]);
+
+                intent.putExtra("Login", loginStrings);
+                intent.putExtra("Mode", 0);
+
                 aBoolean2 = true;
                 startActivity(intent);
                 dialogInterface.dismiss();
