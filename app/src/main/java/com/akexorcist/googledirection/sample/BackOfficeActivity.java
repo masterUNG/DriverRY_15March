@@ -1,5 +1,6 @@
 package com.akexorcist.googledirection.sample;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -26,6 +27,13 @@ public class BackOfficeActivity extends AppCompatActivity implements View.OnClic
 
     @Override
     public void onClick(View view) {
+
+        if (view == button) {
+            Intent intent = new Intent(BackOfficeActivity.this, PhotoActivity.class);
+            intent.putExtra("Login", getIntent().getStringArrayExtra("Login"));
+            startActivity(intent);
+            finish();
+        }
 
     }
 }   // Main Class

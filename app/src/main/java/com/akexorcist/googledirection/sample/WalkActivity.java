@@ -108,7 +108,7 @@ public class WalkActivity extends AppCompatActivity implements View.OnClickListe
 
             //For Update Status @ userTABLE
             EditStatusDriver editStatusDriver = new EditStatusDriver(WalkActivity.this,
-                    loginStrings[0], "1");
+                    loginStrings[0], "7");
             editStatusDriver.execute();
 
             if (Boolean.parseBoolean(editStatusDriver.get())) {
